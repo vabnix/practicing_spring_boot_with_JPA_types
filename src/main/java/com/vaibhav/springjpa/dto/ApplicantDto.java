@@ -10,5 +10,5 @@ public class ApplicantDto {
     private String firstName;      // camelCase in Java
     private String lastName;
     private String emailAddress;
-    private String active;
+    private String status;
 }

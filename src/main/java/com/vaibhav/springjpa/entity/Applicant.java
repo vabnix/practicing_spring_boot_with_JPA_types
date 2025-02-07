@@ -19,6 +19,6 @@ public class Applicant {
     @Column(name = "email_address")
     private String emailAddress;
 
-    @Column(name = "active")
-    private String active;
+    @Column(name = "status")
+    private String status;
 }
