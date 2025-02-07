@@ -11,9 +11,9 @@ public class ApplicantMapper {
     public ApplicantDto entityToDtoMapper(Applicant applicant){
         ApplicantDto applicantDto = new ApplicantDto();
         applicantDto.setId(applicant.getId());
-        applicantDto.setFirst_name(applicant.getFirst_name());
-        applicantDto.setLast_name(applicant.getLast_name());
-        applicantDto.setEmail_address(applicant.getEmail_address());
+        applicantDto.setFirstName(applicant.getFirstName());
+        applicantDto.setLastName(applicant.getLastName());
+        applicantDto.setEmailAddress(applicant.getEmailAddress());
         applicantDto.setActive(applicant.getActive());
         return applicantDto;
     }
@@ -21,9 +21,9 @@ public class ApplicantMapper {
     public Applicant dtoToEntityMapper(ApplicantDto applicantDto){
         Applicant applicant = new Applicant();
         applicant.setId(applicantDto.getId());
-        applicant.setFirst_name(applicantDto.getFirst_name());
-        applicant.setLast_name(applicantDto.getLast_name());
-        applicant.setEmail_address(applicantDto.getEmail_address());
+        applicant.setFirstName(applicantDto.getFirstName());
+        applicant.setLastName(applicantDto.getLastName());
+        applicant.setEmailAddress(applicantDto.getEmailAddress());
         applicant.setActive(applicant.getActive());
         return applicant;
     }
@@ -33,9 +33,9 @@ public class ApplicantMapper {
         for (Applicant applicant: applicantList){
             ApplicantDto applicantDto = new ApplicantDto();
             applicantDto.setId(applicant.getId());
-            applicantDto.setFirst_name(applicant.getFirst_name());
-            applicantDto.setLast_name(applicant.getLast_name());
-            applicantDto.setEmail_address(applicant.getEmail_address());
+            applicantDto.setFirstName(applicant.getFirstName());
+            applicantDto.setLastName(applicant.getLastName());
+            applicantDto.setEmailAddress(applicant.getEmailAddress());
             applicantDto.setActive(applicant.getActive());
             applicantDtoList.add(applicantDto);
         }
@@ -47,9 +47,9 @@ public class ApplicantMapper {
         for (ApplicantDto applicantDto: applicantDtoList){
             Applicant applicant = new Applicant();
             applicant.setId(applicantDto.getId());
-            applicant.setFirst_name(applicantDto.getFirst_name());
-            applicant.setLast_name(applicantDto.getLast_name());
-            applicant.setEmail_address(applicantDto.getEmail_address());
+            applicant.setFirstName(applicantDto.getFirstName());
+            applicant.setLastName(applicantDto.getLastName());
+            applicant.setEmailAddress(applicantDto.getEmailAddress());
             applicant.setActive(applicant.getActive());
             applicantList.add(applicant);
         }

@@ -40,4 +40,13 @@ public class ApplicantController {
                                                   @RequestParam(defaultValue = "2") int size){
         return applicantService.getAllApplicantsByPageAndSize(page, size);
     }
+
+    @GetMapping("/order")
+    public List<Applicant> orderByName(@RequestParam String type){
+        return switch (type) {
+            case "firstName" -> applicantService.getApplicantOrderByFirstName();
+            case "lastName" -> applicantService.getApplicantOrderByLastName();
+            default -> null;
+        };
+    }
 }
