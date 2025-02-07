@@ -1,6 +1,8 @@
 package com.vaibhav.springjpa.controller;
 
 import com.vaibhav.springjpa.dto.ApplicantDto;
+import com.vaibhav.springjpa.dto.PageResponseDto;
+import com.vaibhav.springjpa.entity.Applicant;
 import com.vaibhav.springjpa.service.ApplicantService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,11 @@ public class ApplicantController {
     @GetMapping("/{id}")
     public ApplicantDto getApplicantById(@PathVariable Long id){
         return applicantService.getApplicantById(id);
+    }
+
+    @GetMapping("/page")
+    public PageResponseDto<Applicant> getPageData(@RequestParam(defaultValue = "0") int page,
+                                                  @RequestParam(defaultValue = "2") int size){
+        return applicantService.getAllApplicantsByPageAndSize(page, size);
     }
 }
