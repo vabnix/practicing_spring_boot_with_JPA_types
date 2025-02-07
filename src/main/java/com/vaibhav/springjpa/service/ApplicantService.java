@@ -3,6 +3,7 @@ package com.vaibhav.springjpa.service;
 import com.vaibhav.springjpa.dto.ApplicantDto;
 import com.vaibhav.springjpa.dto.PageResponseDto;
 import com.vaibhav.springjpa.entity.Applicant;
+import com.vaibhav.springjpa.entity.Resume;
 import com.vaibhav.springjpa.mapper.ApplicantMapper;
 import com.vaibhav.springjpa.repository.ApplicantRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -33,6 +34,10 @@ public class ApplicantService {
 
     public ResponseEntity<?> addApplicants(ApplicantDto applicantDto) {
         Applicant applicant = new ApplicantMapper().dtoToEntityMapper(applicantDto);
+        Resume resume = applicant.getResume();
+        if(resume!= null){
+            resume.setApplicant(applicant);
+        }
         applicantRepository.save(applicant);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

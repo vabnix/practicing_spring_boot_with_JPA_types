@@ -1,5 +1,6 @@
 package com.vaibhav.springjpa.dto;
 
+import com.vaibhav.springjpa.entity.Resume;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -11,4 +12,5 @@ public class ApplicantDto {
     private String lastName;
     private String emailAddress;
     private String status;
+    private Resume resume;
 }

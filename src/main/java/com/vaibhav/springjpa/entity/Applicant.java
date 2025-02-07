@@ -8,7 +8,13 @@ import lombok.Data;
 @Table(name = "applicants")
 public class Applicant {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "applicant_sequence")
+    @SequenceGenerator(
+            name = "applicant_sequence",
+            sequenceName = "applicant_seq",
+            initialValue = 1,
+            allocationSize = 1
+    )
     private Long id;
     @Column(name = "first_name")  // maps to database column first_name
     private String firstName;      // camelCase in Java
@@ -21,4 +27,7 @@ public class Applicant {
 
     @Column(name = "status")
     private String status;
+
+    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL)
+    private Resume resume;
 }

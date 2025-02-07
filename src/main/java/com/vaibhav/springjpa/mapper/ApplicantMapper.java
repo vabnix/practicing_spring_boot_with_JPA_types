@@ -15,6 +15,7 @@ public class ApplicantMapper {
         applicantDto.setLastName(applicant.getLastName());
         applicantDto.setEmailAddress(applicant.getEmailAddress());
         applicantDto.setStatus(applicant.getStatus());
+        applicantDto.setResume(applicant.getResume());
         return applicantDto;
     }
 
@@ -24,7 +25,8 @@ public class ApplicantMapper {
         applicant.setFirstName(applicantDto.getFirstName());
         applicant.setLastName(applicantDto.getLastName());
         applicant.setEmailAddress(applicantDto.getEmailAddress());
-        applicant.setStatus(applicant.getStatus());
+        applicant.setStatus(applicantDto.getStatus());
+        applicant.setResume(applicantDto.getResume());
         return applicant;
     }
 
@@ -37,6 +39,7 @@ public class ApplicantMapper {
             applicantDto.setLastName(applicant.getLastName());
             applicantDto.setEmailAddress(applicant.getEmailAddress());
             applicantDto.setStatus(applicant.getStatus());
+            applicantDto.setResume(applicant.getResume());
             applicantDtoList.add(applicantDto);
         }
         return applicantDtoList;
@@ -50,7 +53,8 @@ public class ApplicantMapper {
             applicant.setFirstName(applicantDto.getFirstName());
             applicant.setLastName(applicantDto.getLastName());
             applicant.setEmailAddress(applicantDto.getEmailAddress());
-            applicant.setStatus(applicant.getStatus());
+            applicant.setStatus(applicantDto.getStatus());
+            applicant.setResume(applicantDto.getResume());
             applicantList.add(applicant);
         }
         return applicantList;
