@@ -3,6 +3,9 @@ package com.vaibhav.springjpa.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @Table(name = "applicants")
@@ -30,4 +33,14 @@ public class Applicant {
 
     @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL)
     private Resume resume;
+
+    @OneToMany
+    private List<Application> applications;
+
+    public void setApplications(List<Application> applications) {
+        if(applications==null){
+            applications = new ArrayList<>();
+        }
+        this.applications = applications;
+    }
 }

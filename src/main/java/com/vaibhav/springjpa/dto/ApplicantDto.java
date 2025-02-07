@@ -1,8 +1,12 @@
 package com.vaibhav.springjpa.dto;
 
+import com.vaibhav.springjpa.entity.Application;
 import com.vaibhav.springjpa.entity.Resume;
 import jakarta.persistence.Id;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class ApplicantDto {
@@ -13,4 +17,5 @@ public class ApplicantDto {
     private String emailAddress;
     private String status;
     private Resume resume;
+    private List<Application> applications = new ArrayList<>();
 }
